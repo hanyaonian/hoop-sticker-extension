@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "hoop helpers",
+  "description": "Base Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "dist/index.html",
+    "default_icon": "assets/icon.jpg"
+  }
+}

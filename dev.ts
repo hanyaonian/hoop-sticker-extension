@@ -21,10 +21,15 @@ async function getFiles(dir: string, ext: string) {
   const source = resolve(process.cwd(), "src");
   const ts = await getFiles(source, ".ts");
   const watcher = chokidar.watch(ts);
+  const build = () => {
+    $`pnpm build`;
+    $`pnpm build:page`;
+  };
+  build();
 
   console.log("start watching...", JSON.stringify(ts));
   watcher.on("change", () => {
     console.log("updating...");
-    $`npm run build`;
+    build();
   });
 })();
